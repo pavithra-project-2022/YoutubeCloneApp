@@ -1,7 +1,9 @@
 import axios from 'axios';
 import { useFormik } from 'formik';
-import React from 'react';
+import React, { useEffect } from 'react';
+import { useDispatch, useSelector } from 'react-redux';
 import { useHistory, } from 'react-router-dom';
+import { login } from '../../redux/actions/auth.action';
 
 function Register() {
   let history = useHistory();
@@ -21,9 +23,32 @@ function Register() {
       }
     },
   });
+
+  const dispatch = useDispatch();
+
+  const accessToken = useSelector((state) => state.auth.accessToken);
+
+  const handleLogin = () => {
+    dispatch(login());
+  };
+
+  useEffect(() => {
+    if (accessToken) {
+      history.push("/");
+    }
+  }, [accessToken, history]);
+
   return (
     <div className="container">
-        <div style={{height:"300px" ,width:"300px",marginLeft:"400px",marginTop:"200px" , border:"2px solid black" ,borderRadius:"5px"}}>
+      <div className="login">
+        <div className="login__container">
+          <h2>Youtube Clone</h2>
+          <img
+            src="http://pngimg.com/uploads/youtube/youtube_PNG2.png"
+            alt=""
+          />
+           <button onClick={handleLogin}>Login With google</button>
+        <div style={{height:"300px" ,width:"300px"}}>
       <form className='d-flex align-item-center justify-content-center m-3' onSubmit={formik.handleSubmit}>
         <div className="row">
           <div className="col-lg-12">
@@ -70,6 +95,8 @@ function Register() {
         </div>
       </form>
       </div>
+    </div>
+    </div>
     </div>
   );
 }
