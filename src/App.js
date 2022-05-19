@@ -14,6 +14,8 @@ import WatchScreen from './screens/watchScreen/WatchScreen'
 import SearchScreen from './screens/SearchScreen'
 import SubscriptionsScreen from './screens/subscriptionsScreen/SubscriptionsScreen'
 import ChannelScreen from './screens/channelScreen/ChannelScreen'
+import Register from './screens/register/Register'
+import Login from './screens/login/Login'
 
 const Layout = ({ children }) => {
    const [sidebar, toggleSidebar] = useState(false)
@@ -56,7 +58,10 @@ const App = () => {
          </Route>
 
          <Route path='/auth'>
-            <LoginScreen />
+            <Login />
+         </Route>
+         <Route path='/register'>
+            <Register />
          </Route>
 
          <Route path='/search/:query'>

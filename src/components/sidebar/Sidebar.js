@@ -12,12 +12,14 @@ import {
 } from 'react-icons/md'
 import { useDispatch } from 'react-redux'
 import { log_out } from '../../redux/actions/auth.action'
-import { Link } from 'react-router-dom'
+import { Link, useHistory } from 'react-router-dom'
 
 const Sidebar = ({ sidebar, handleToggleSidebar }) => {
+   const history = useHistory()
    const dispatch = useDispatch()
    const logOutHandler = () => {
       dispatch(log_out())
+      history.push("/auth")
    }
    return (
       <nav
