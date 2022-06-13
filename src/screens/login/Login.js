@@ -48,47 +48,7 @@ function Login() {
             alt=""
           />
           <button onClick={handleLogin}>Login With google</button>
-          <div style={{height:"300px" ,width:"300px",}}>
-            <form onSubmit={formik.handleSubmit}>
-              <div className="row">
-                <div className="col-lg-12">
-                  <label>Email</label>
-                  <input
-                    type={"email"}
-                    className="form-control"
-                    name="email"
-                    id="email"
-                    onChange={formik.handleChange}
-                    value={formik.values.email}
-                  />
-                </div>
-                <div className="col-lg-12">
-                  <label>Password</label>
-                  <input
-                    type={"password"}
-                    className="form-control"
-                    name="password"
-                    id="password"
-                    onChange={formik.handleChange}
-                    value={formik.values.password}
-                  />
-                </div>
-                <div className="col-lg-12 mt-2">
-                  <input
-                    type={"submit"}
-                    className="btn btn-primary"
-                    value={"Login"}
-                  />
-                  <input
-                    type={"submit"}
-                    className="btn btn-primary  ms-2"
-                    value={"Register"}
-                    onClick={() => history.push("/register")}
-                  />
-                </div>
-              </div>
-            </form>
-          </div>
+         
         </div>
       </div>
     </div>

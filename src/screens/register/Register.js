@@ -48,53 +48,7 @@ function Register() {
             alt=""
           />
            <button onClick={handleLogin}>Login With google</button>
-        <div style={{height:"300px" ,width:"300px"}}>
-      <form className='d-flex align-item-center justify-content-center m-3' onSubmit={formik.handleSubmit}>
-        <div className="row">
-          <div className="col-lg-12">
-            <label>Name</label>
-            <input
-              type={'text'}
-              name="name"
-              id="name"
-              className="form-control"
-              onChange={formik.handleChange}
-              value={formik.values.name}
-            />
-          </div>
-          <div className="col-lg-12">
-            <label>Email</label>
-            <input
-              type={'email'}
-              name="email"
-              id="email"
-              className="form-control"
-              onChange={formik.handleChange}
-              value={formik.values.email}
-            />
-          </div>
-          <div className="col-lg-12">
-            <label>Password</label>
-            <input
-              type={'password'}
-              name="password"
-              id="password"
-              className="form-control"
-              onChange={formik.handleChange}
-              value={formik.values.password}
-            />
-          </div>
-          <div className="col-lg-12 mt-3">
-            <input type={'submit'} className="btn btn-primary" value="Submit" />
-            <input
-              type={'submit'}
-              className="btn btn-primary ms-2"
-              value={'SignIn'} onClick={()=>history.push('/auth')}
-            />
-          </div>
-        </div>
-      </form>
-      </div>
+        
     </div>
     </div>
     </div>
